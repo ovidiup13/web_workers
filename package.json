@@ -1,0 +1,21 @@
+{
+  "name": "web_workers",
+  "version": "1.0.0",
+  "description": "Demo of web workers and how they can be used to move state management to a separate thread.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -c ./webpack.config.js"
+  },
+  "author": "Ovidiu Popoviciu",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "html-loader": "^1.3.0",
+    "html-webpack-plugin": "^4.4.1",
+    "prettier": "^2.1.2",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "worker-plugin": "^5.0.0"
+  }
+}

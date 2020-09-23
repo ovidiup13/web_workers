@@ -31,16 +31,22 @@ function memoisedFib(n: number): number {
     const result = calcFib(f - 1) + calcFib(f - 2);
     memo[f] = result;
     return result;
-  }
+  };
 
   return calcFib(n);
+}
+
+function callbackFib(n: number, callback: () => void): void {
+  const fib = memoisedFib(n);
+  callback();
 }
 
 //=======================================
 
 const fibonnaciApi: FibonnaciApi = {
   calculateFib,
-  memoisedFib
+  memoisedFib,
+  callbackFib,
 };
 
 Comlink.expose(fibonnaciApi);

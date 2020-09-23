@@ -11,9 +11,16 @@ async function init() {
   console.log('calculating stuff');
   console.log('calculate fib worker', await api.calculateFib(20));
   console.log('calculate memoised fib worker', await api.memoisedFib(100));
-
-  console.log('terminating worker');
-  worker.terminate();
+  console.log(
+    'calculate fib and pass callback',
+    await api.callbackFib(
+      1000,
+      Comlink.proxy(() => {
+        console.log('Callback finished woo!!! OK now you die');
+        worker.terminate();
+      })
+    )
+  );
 }
 
 init();
